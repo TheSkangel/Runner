@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5e8c88a997f544e57907624691ad82a6
-timeCreated: 1489258465
+guid: ffb9d226442803b48a643f739e8ce38e
+timeCreated: 1489263748
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -64,9 +64,8 @@ ModelImporter:
     400054: Right Leg IK_end
     400056: Turso
     4300000: Cube
-    7400000: Armature|CubeAction
-    7400002: Armature|death
-    7400004: Armature|Run_blocking
+    7400000: Armature|death
+    7400002: Armature|Run_blocking
     9500000: //RootNode
     13700000: Cube
   materials:
