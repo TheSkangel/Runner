@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement2 : MonoBehaviour
+{
 
     public Rigidbody rb;
     public float speed;
@@ -17,17 +18,19 @@ public class PlayerMovement : MonoBehaviour {
     private float originalTime;
     private float originalSpeed;
 
-    void Start () {
+    void Start()
+    {
         rb.GetComponent<Rigidbody>();
         originalSpeed = speed;
         originalTime = timer;
-	}
-	
-	void FixedUpdate () {
+    }
+
+    void FixedUpdate()
+    {
 
         Move();
         SlowDown();
-	}
+    }
 
     void SlowDown()
     {
@@ -46,14 +49,14 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Move()
     {
-        if (Input.GetButtonDown("P1Horizontal"))
+        if (Input.GetButtonDown("P2Horizontal"))
         {
             PlayerPosition = rb.transform.position;
-            PlayerPosition = PlayerPosition + new Vector3 (1f,0f,0f) * speed * Time.deltaTime;
+            PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
             rb.MovePosition(PlayerPosition);
         }
 
-        if (Input.GetButtonDown("P1Jump") && grounded == true)
+        if (Input.GetButtonDown("P2Jump") && grounded == true)
         {
             rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
             grounded = false;
@@ -68,7 +71,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         else { grounded = false; }
-        
+
         if (coll.tag == "Obstacle")
         {
             playerHit = true;
