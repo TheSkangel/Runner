@@ -13,15 +13,36 @@ public class PlayerMovement : MonoBehaviour {
     bool grounded = false;
     bool playerHit = false;
 
-	void Start () {
+    public float timer; // set how long you want to slow down your player;
+    private float originalTime;
+    private float originalSpeed;
+
+    void Start () {
         rb.GetComponent<Rigidbody>();
+        originalSpeed = speed;
+        originalTime = timer;
 	}
 	
 	void FixedUpdate () {
 
         Move();
-
+        SlowDown();
 	}
+
+    void SlowDown()
+    {
+        if (playerHit == true)
+        {
+            speed = speed / 3; //Slow down character
+            timer -= Time.deltaTime; // count down
+            if (timer <= 0)
+            {
+                speed = originalSpeed;
+                playerHit = false;
+                timer = originalTime;
+            }
+        }
+    }
 
     public void Move()
     {
@@ -47,21 +68,10 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         else { grounded = false; }
-
+        
         if (coll.tag == "Obstacle")
         {
-            StartCoroutine(CollisionCooldown());
+            playerHit = true;
         }
     }
-
-    IEnumerator CollisionCooldown()
-    {
-        speed = speed / 3;
-        playerHit = true;
-        yield return new WaitForSeconds(2);
-        playerHit = false;
-        speed = speed * 3;
-        yield return new WaitForSeconds(3);
-    }
-
 }
