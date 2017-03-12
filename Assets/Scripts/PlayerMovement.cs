@@ -48,7 +48,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void FixedUpdate () {
 
-        movePlayer1();
+        //movePlayer1();
+        Move();
         SlowDown();
 	}
 
@@ -79,38 +80,39 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    public void movePlayer1()
-    {
-        if (Input.GetKeyDown(player1HButton))
-        {
-            PlayerPosition = rb.transform.position;
-            PlayerPosition = PlayerPosition + new Vector3 (1f,0f,0f) * speed * Time.deltaTime;
-            rb.MovePosition(PlayerPosition);
-            anim.Play("Armature|Run_blocking");
-        }
-
-        if (Input.GetKeyDown(player1JButton) && grounded == true)
-        {
-            rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
-            grounded = false;
-        }
-    }
-
-    //public void Move()
+    //public void movePlayer1()
     //{
-    //    if (Input.GetButtonDown("P1Horizontal"))
+    //    if (Input.GetKeyDown(player1HButton))
     //    {
     //        PlayerPosition = rb.transform.position;
     //        PlayerPosition = PlayerPosition + new Vector3 (1f,0f,0f) * speed * Time.deltaTime;
     //        rb.MovePosition(PlayerPosition);
+    //        anim.Play("Armature|Run_blocking");
     //    }
 
-    //    if (Input.GetButtonDown("P1Jump") && grounded == true)
+    //    if (Input.GetKeyDown(player1JButton) && grounded == true)
     //    {
     //        rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
     //        grounded = false;
     //    }
     //}
+
+    public void Move()
+    {
+        if (Input.GetButtonDown("P1Horizontal"))
+        {
+            PlayerPosition = rb.transform.position;
+            PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+            rb.MovePosition(PlayerPosition);
+            anim.Play("Armature|Run_blocking");
+        }
+
+        if (Input.GetButtonDown("P1Jump") && grounded == true)
+        {
+            rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
+            grounded = false;
+        }
+    }
 
     void OnTriggerEnter(Collider coll)
     {
