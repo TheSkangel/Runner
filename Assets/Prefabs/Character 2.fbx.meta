@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0ab1fba6771decf49b92079447247cf2
-timeCreated: 1489262913
+guid: 4c104a1b62c784deb8e6d2895903d894
+timeCreated: 1489273117
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -64,8 +64,14 @@ ModelImporter:
     400054: Right Leg IK_end
     400056: Turso
     4300000: Cube
-    7400000: Armature|death
-    7400002: Armature|Run_blocking
+    7400000: Armature|Action
+    7400002: Armature|death
+    7400004: Armature|death.001
+    7400006: Armature|death.002
+    7400008: Armature|death.003
+    7400010: Armature|Idle
+    7400012: Armature|Idle.001
+    7400014: Armature|Run_blocking
     9500000: //RootNode
     13700000: Cube
   materials:
@@ -88,7 +94,265 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|death
+      takeName: Armature|death
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Chest/Arm L 2
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l/Hand L
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l/Hand L/Hand L_end
+        weight: 1
+      - path: Armature/Chest/Arm R 2
+        weight: 1
+      - path: 'Armature/Chest/Arm R 2/Arm R '
+        weight: 1
+      - path: 'Armature/Chest/Arm R 2/Arm R /Hand R '
+        weight: 1
+      - path: Armature/Chest/Arm R 2/Arm R /Hand R /Hand R _end
+        weight: 1
+      - path: Armature/Chest/Head
+        weight: 1
+      - path: Armature/Chest/Head/Head_end
+        weight: 1
+      - path: Armature/Head.001
+        weight: 1
+      - path: Armature/Head.001/Head.001_end
+        weight: 1
+      - path: Armature/Left Hand IK
+        weight: 1
+      - path: Armature/Left Hand IK/Left Hand IK_end
+        weight: 1
+      - path: Armature/Left Leg IK
+        weight: 1
+      - path: Armature/Left Leg IK/Left Leg IK_end
+        weight: 1
+      - path: Armature/Right Hand IK
+        weight: 1
+      - path: Armature/Right Hand IK/Right Hand IK_end
+        weight: 1
+      - path: Armature/Right Leg IK
+        weight: 1
+      - path: Armature/Right Leg IK/Right Leg IK_end
+        weight: 1
+      - path: Armature/Turso
+        weight: 1
+      - path: Armature/Turso/Leg L
+        weight: 1
+      - path: Armature/Turso/Leg L/Leg L_end
+        weight: 1
+      - path: Armature/Turso/Leg R
+        weight: 1
+      - path: Armature/Turso/Leg R/Leg R_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Idle
+      takeName: Armature|Idle
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Chest/Arm L 2
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l/Hand L
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l/Hand L/Hand L_end
+        weight: 1
+      - path: Armature/Chest/Arm R 2
+        weight: 1
+      - path: 'Armature/Chest/Arm R 2/Arm R '
+        weight: 1
+      - path: 'Armature/Chest/Arm R 2/Arm R /Hand R '
+        weight: 1
+      - path: Armature/Chest/Arm R 2/Arm R /Hand R /Hand R _end
+        weight: 1
+      - path: Armature/Chest/Head
+        weight: 1
+      - path: Armature/Chest/Head/Head_end
+        weight: 1
+      - path: Armature/Head.001
+        weight: 1
+      - path: Armature/Head.001/Head.001_end
+        weight: 1
+      - path: Armature/Left Hand IK
+        weight: 1
+      - path: Armature/Left Hand IK/Left Hand IK_end
+        weight: 1
+      - path: Armature/Left Leg IK
+        weight: 1
+      - path: Armature/Left Leg IK/Left Leg IK_end
+        weight: 1
+      - path: Armature/Right Hand IK
+        weight: 1
+      - path: Armature/Right Hand IK/Right Hand IK_end
+        weight: 1
+      - path: Armature/Right Leg IK
+        weight: 1
+      - path: Armature/Right Leg IK/Right Leg IK_end
+        weight: 1
+      - path: Armature/Turso
+        weight: 1
+      - path: Armature/Turso/Leg L
+        weight: 1
+      - path: Armature/Turso/Leg L/Leg L_end
+        weight: 1
+      - path: Armature/Turso/Leg R
+        weight: 1
+      - path: Armature/Turso/Leg R/Leg R_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Run_blocking
+      takeName: Armature|Run_blocking
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Chest
+        weight: 1
+      - path: Armature/Chest/Arm L 2
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l/Hand L
+        weight: 1
+      - path: Armature/Chest/Arm L 2/Arm l/Hand L/Hand L_end
+        weight: 1
+      - path: Armature/Chest/Arm R 2
+        weight: 1
+      - path: 'Armature/Chest/Arm R 2/Arm R '
+        weight: 1
+      - path: 'Armature/Chest/Arm R 2/Arm R /Hand R '
+        weight: 1
+      - path: Armature/Chest/Arm R 2/Arm R /Hand R /Hand R _end
+        weight: 1
+      - path: Armature/Chest/Head
+        weight: 1
+      - path: Armature/Chest/Head/Head_end
+        weight: 1
+      - path: Armature/Head.001
+        weight: 1
+      - path: Armature/Head.001/Head.001_end
+        weight: 1
+      - path: Armature/Left Hand IK
+        weight: 1
+      - path: Armature/Left Hand IK/Left Hand IK_end
+        weight: 1
+      - path: Armature/Left Leg IK
+        weight: 1
+      - path: Armature/Left Leg IK/Left Leg IK_end
+        weight: 1
+      - path: Armature/Right Hand IK
+        weight: 1
+      - path: Armature/Right Hand IK/Right Hand IK_end
+        weight: 1
+      - path: Armature/Right Leg IK
+        weight: 1
+      - path: Armature/Right Leg IK/Right Leg IK_end
+        weight: 1
+      - path: Armature/Turso
+        weight: 1
+      - path: Armature/Turso/Leg L
+        weight: 1
+      - path: Armature/Turso/Leg L/Leg L_end
+        weight: 1
+      - path: Armature/Turso/Leg R
+        weight: 1
+      - path: Armature/Turso/Leg R/Leg R_end
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

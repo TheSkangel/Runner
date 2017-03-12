@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour {
             PlayerPosition = rb.transform.position;
             PlayerPosition = PlayerPosition + new Vector3 (1f,0f,0f) * speed * Time.deltaTime;
             rb.MovePosition(PlayerPosition);
+
         }
 
         if (Input.GetButtonDown("P1Jump") && grounded == true)
