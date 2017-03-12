@@ -12,6 +12,7 @@ public class HealthManagment2 : MonoBehaviour
     public int Health;
     bool playerHit;
     public Canvas ui;
+    public Animator anim;
     public Text KOwin;
     public Image Heart1;
     public Image Heart2;
@@ -28,14 +29,14 @@ public class HealthManagment2 : MonoBehaviour
     {
 
         ui.GetComponent<Canvas>();
+        anim.GetComponent<Animator>();
         KOwin.GetComponent<Text>();
-        KOwin.enabled = !KOwin.enabled;
         playerHit = false;
         Debug.Log("False");
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
 
         if (playerHit == true && Health > 0)
@@ -46,8 +47,11 @@ public class HealthManagment2 : MonoBehaviour
             playerHit = false;
         }
 
-        else { KOwin.enabled = KOwin.enabled; }
-
+        if (Health <= 0)
+        {
+            anim.Play("Armature|death");
+            KOwin.text = "Player 1 wins";
+        }
     }
 
     void DamageTaken()
