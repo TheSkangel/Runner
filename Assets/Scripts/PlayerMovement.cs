@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
     bool grounded = false;
-    bool playerHit = false;
+   public bool playerHit = false;
 
     public float timer; // set how long you want to slow down your player;
     private float originalTime;
