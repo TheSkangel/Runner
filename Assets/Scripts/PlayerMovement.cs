@@ -111,7 +111,6 @@ public class PlayerMovement : MonoBehaviour {
     //        grounded = false;
     //    }
     //}
-
     void OnTriggerEnter(Collider coll)
     {
         if (coll.tag == "Ground")
