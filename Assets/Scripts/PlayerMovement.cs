@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public Rigidbody rb;
     public Animator anim;
+    public AudioSource aud;
     public float speed;
     public float force;
     public KeyCode player1HButton;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Awake()
     {
+        aud.GetComponent<AudioSource>();
         anim.GetComponent<Animator>();
         rb.GetComponent<Rigidbody>();
         originalSpeed = speed;
@@ -109,6 +111,7 @@ public class PlayerMovement : MonoBehaviour {
             PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
             rb.MovePosition(PlayerPosition);
             anim.Play("Armature|Run_blocking");
+            aud.Play();
         }
 
         if (Input.GetKeyDown(player1JButton) && grounded == true)
