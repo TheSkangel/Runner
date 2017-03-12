@@ -16,7 +16,7 @@ public class NextScene : MonoBehaviour
 	// Update is called once per frame
 	void Update() {
 		if (Input.GetKey(KeyCode.A)&& Input.GetKey(KeyCode.L))
-		{ SceneManager.LoadScene("1");
+		{ SceneManager.LoadScene("main");
 		}
 	}
 	public void ExitButton() {
