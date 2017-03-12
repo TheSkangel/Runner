@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 PlayerPosition;
     private KeyCode[] buttonsp1h;
     private KeyCode[] buttonsp1j;
+    private List<KeyCode> buttons = new List<KeyCode>();
+
 
     bool grounded = false;
     bool playerHit = false;
@@ -48,10 +50,30 @@ public class PlayerMovement : MonoBehaviour {
 
     void FixedUpdate () {
 
-        //movePlayer1();
-        Move();
+        movePlayer1();
+        //Move();
         SlowDown();
 	}
+
+    void ResetButtons()
+    {
+        buttons.Clear();
+        buttons.Add(KeyCode.Q);
+        buttons.Add(KeyCode.W);
+        buttons.Add(KeyCode.E);
+        buttons.Add(KeyCode.R);
+        buttons.Add(KeyCode.T);
+        buttons.Add(KeyCode.A);
+        buttons.Add(KeyCode.S);
+        buttons.Add(KeyCode.D);
+        buttons.Add(KeyCode.F);
+        buttons.Add(KeyCode.Z);
+        buttons.Add(KeyCode.X);
+        buttons.Add(KeyCode.C);
+        buttons.Add(KeyCode.B);
+        buttons.Add(KeyCode.G);
+        buttons.Add(KeyCode.V);
+    }
 
     void SlowDown()
     {
@@ -73,33 +95,15 @@ public class PlayerMovement : MonoBehaviour {
         ButtonTimer -= Time.deltaTime;
         if(ButtonTimer <= 0)
         {
-            //if (player1HButton.CompareTo(player1JButton) == 0 && player1HButton.CompareTo(player2HButton) == 0 && player1HButton.CompareTo(player2JButton) == 0)
-            player1HButton = buttonsp1h[Random.Range(0, buttonsp1h.Length)];
+                player1HButton = buttonsp1h[Random.Range(0, buttonsp1h.Length)];
             player1JButton = buttonsp1j[Random.Range(0, buttonsp1j.Length)];
             ButtonTimer = originalButtonTimer;
         }
     }
 
-    //public void movePlayer1()
-    //{
-    //    if (Input.GetKeyDown(player1HButton))
-    //    {
-    //        PlayerPosition = rb.transform.position;
-    //        PlayerPosition = PlayerPosition + new Vector3 (1f,0f,0f) * speed * Time.deltaTime;
-    //        rb.MovePosition(PlayerPosition);
-    //        anim.Play("Armature|Run_blocking");
-    //    }
-
-    //    if (Input.GetKeyDown(player1JButton) && grounded == true)
-    //    {
-    //        rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
-    //        grounded = false;
-    //    }
-    //}
-
-    public void Move()
+    public void movePlayer1()
     {
-        if (Input.GetButtonDown("P1Horizontal"))
+        if (Input.GetKeyDown(player1HButton))
         {
             PlayerPosition = rb.transform.position;
             PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
@@ -107,12 +111,29 @@ public class PlayerMovement : MonoBehaviour {
             anim.Play("Armature|Run_blocking");
         }
 
-        if (Input.GetButtonDown("P1Jump") && grounded == true)
+        if (Input.GetKeyDown(player1JButton) && grounded == true)
         {
             rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
             grounded = false;
         }
     }
+
+    //public void Move()
+    //{
+    //    if (Input.GetButtonDown("P1Horizontal"))
+    //    {
+    //        PlayerPosition = rb.transform.position;
+    //        PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+    //        rb.MovePosition(PlayerPosition);
+    //        anim.Play("Armature|Run_blocking");
+    //    }
+
+    //    if (Input.GetButtonDown("P1Jump") && grounded == true)
+    //    {
+    //        rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
+    //        grounded = false;
+    //    }
+    //}
 
     void OnTriggerEnter(Collider coll)
     {

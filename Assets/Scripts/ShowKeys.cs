@@ -13,21 +13,24 @@ public class ShowKeys : MonoBehaviour
     public Text plaOneJ;
     public Text plaTwoH;
     public Text plaTwoJ;
-    public string keycode;
 
 
     void Start()
     {
         ui.GetComponent<Canvas>();
-        plaMov1 = GameObject.Find("Player").GetComponent<PlayerMovement>();
-        plaMov2 = GameObject.Find("Player2").GetComponent<PlayerMovement2>();
+        plaMov1 = GameObject.Find("Character 1").GetComponent<PlayerMovement>();
+        plaMov2 = GameObject.Find("Character 2").GetComponent<PlayerMovement2>();
     }
 
 
     void Update()
     {
 
-        // keycode = plaMov1.player1HButton.ToString;
+
+        plaOneH.text = plaMov1.player1HButton.ToString();
+        plaOneJ.text = plaMov1.player1JButton.ToString();
+        plaTwoH.text = plaMov2.player2HButton.ToString();
+        plaTwoJ.text = plaMov2.player2JButton.ToString();
 
     }
 }

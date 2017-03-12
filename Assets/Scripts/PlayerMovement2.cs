@@ -50,8 +50,7 @@ public class PlayerMovement2 : MonoBehaviour{
     void FixedUpdate()
     {
 
-        //movePlayer1();
-        Move();
+        movePlayer1();
         SlowDown();
     }
 
@@ -75,33 +74,15 @@ public class PlayerMovement2 : MonoBehaviour{
         ButtonTimer -= Time.deltaTime;
         if (ButtonTimer <= 0)
         {
-            //if (player1HButton.CompareTo(player1JButton) == 0 && player1HButton.CompareTo(player2HButton) == 0 && player1HButton.CompareTo(player2JButton) == 0)
             player2HButton = buttonsp2h[Random.Range(0, buttonsp2h.Length)];
             player2JButton = buttonsp2j[Random.Range(0, buttonsp2j.Length)];
             ButtonTimer = originalButtonTimer;
         }
     }
 
-    //public void movePlayer1()
-    //{
-    //    if (Input.GetKeyDown(player2HButton))
-    //    {
-    //        PlayerPosition = rb.transform.position;
-    //        PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
-    //        rb.MovePosition(PlayerPosition);
-    //        anim.Play("Armature|Run_blocking");
-    //    }
-
-    //    if (Input.GetKeyDown(player2JButton) && grounded == true)
-    //    {
-    //        rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
-    //        grounded = false;
-    //    }
-    //}
-
-    public void Move()
+    public void movePlayer1()
     {
-        if (Input.GetButtonDown("P2Horizontal"))
+        if (Input.GetKeyDown(player2HButton))
         {
             PlayerPosition = rb.transform.position;
             PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
@@ -109,12 +90,29 @@ public class PlayerMovement2 : MonoBehaviour{
             anim.Play("Armature|Run_blocking");
         }
 
-        if (Input.GetButtonDown("P2Jump") && grounded == true)
+        if (Input.GetKeyDown(player2JButton) && grounded == true)
         {
             rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
             grounded = false;
         }
     }
+
+    //public void Move()
+    //{
+    //    if (Input.GetButtonDown("P2Horizontal"))
+    //    {
+    //        PlayerPosition = rb.transform.position;
+    //        PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+    //        rb.MovePosition(PlayerPosition);
+    //        anim.Play("Armature|Run_blocking");
+    //    }
+
+    //    if (Input.GetButtonDown("P2Jump") && grounded == true)
+    //    {
+    //        rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
+    //        grounded = false;
+    //    }
+    //}
 
     void OnTriggerEnter(Collider coll)
     {
