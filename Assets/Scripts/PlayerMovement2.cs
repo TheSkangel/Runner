@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement2 : MonoBehaviour
-{
+public class PlayerMovement2 : MonoBehaviour{
 
     public Rigidbody rb;
+    public Animator anim;
     public float speed;
     public float force;
+    public KeyCode player2HButton;
+    public KeyCode player2JButton;
 
     private Vector3 PlayerPosition;
+    private KeyCode[] buttonsp2h;
+    private KeyCode[] buttonsp2j;
 
     bool grounded = false;
     bool playerHit = false;
@@ -18,16 +22,35 @@ public class PlayerMovement2 : MonoBehaviour
     private float originalTime;
     private float originalSpeed;
 
-    void Start()
+    public float ButtonTimer;
+    private float originalButtonTimer;
+
+    void Awake()
     {
+        anim.GetComponent<Animator>();
         rb.GetComponent<Rigidbody>();
         originalSpeed = speed;
         originalTime = timer;
+        buttonsp2j = new KeyCode[] { KeyCode.Y, KeyCode.U, KeyCode.I, KeyCode.O, KeyCode.P, KeyCode.Semicolon, };
+        buttonsp2h = new KeyCode[] { KeyCode.J, KeyCode.K, KeyCode.H, KeyCode.L, KeyCode.N, KeyCode.M };
+        originalButtonTimer = ButtonTimer;
+    }
+
+    void Start()
+    {
+        player2HButton = buttonsp2h[Random.Range(0, buttonsp2h.Length)];
+        player2JButton = buttonsp2j[Random.Range(0, buttonsp2j.Length)];
+    }
+
+    void Update()
+    {
+        resetButtons();
     }
 
     void FixedUpdate()
     {
 
+        //movePlayer1();
         Move();
         SlowDown();
     }
@@ -47,6 +70,35 @@ public class PlayerMovement2 : MonoBehaviour
         }
     }
 
+    void resetButtons()
+    {
+        ButtonTimer -= Time.deltaTime;
+        if (ButtonTimer <= 0)
+        {
+            //if (player1HButton.CompareTo(player1JButton) == 0 && player1HButton.CompareTo(player2HButton) == 0 && player1HButton.CompareTo(player2JButton) == 0)
+            player2HButton = buttonsp2h[Random.Range(0, buttonsp2h.Length)];
+            player2JButton = buttonsp2j[Random.Range(0, buttonsp2j.Length)];
+            ButtonTimer = originalButtonTimer;
+        }
+    }
+
+    //public void movePlayer1()
+    //{
+    //    if (Input.GetKeyDown(player2HButton))
+    //    {
+    //        PlayerPosition = rb.transform.position;
+    //        PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+    //        rb.MovePosition(PlayerPosition);
+    //        anim.Play("Armature|Run_blocking");
+    //    }
+
+    //    if (Input.GetKeyDown(player2JButton) && grounded == true)
+    //    {
+    //        rb.AddForce(new Vector3(0f, force, 0f), ForceMode.Impulse);
+    //        grounded = false;
+    //    }
+    //}
+
     public void Move()
     {
         if (Input.GetButtonDown("P2Horizontal"))
@@ -54,6 +106,7 @@ public class PlayerMovement2 : MonoBehaviour
             PlayerPosition = rb.transform.position;
             PlayerPosition = PlayerPosition + new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
             rb.MovePosition(PlayerPosition);
+            anim.Play("Armature|Run_blocking");
         }
 
         if (Input.GetButtonDown("P2Jump") && grounded == true)
