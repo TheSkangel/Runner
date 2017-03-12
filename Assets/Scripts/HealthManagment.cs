@@ -34,7 +34,7 @@ public class HealthManagment : MonoBehaviour {
     }
 	
 
-	void FixedUpdate () {
+	void Update () {
 	  
             if (playerHit == true && Health > 0)
             {
